@@ -1,0 +1,27 @@
+language: php
+
+php:
+    - 7.3
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+    - $HOME/.npm
+    - frontend/startbootstrap-freelancer/node_modules
+    - bin/.phpunit
+
+before_install:
+    - phpenv config-rm xdebug.ini
+
+install:
+    - make build-prod
+
+before_script:
+    - make start
+
+script:
+    - bin/security-checker security:check
+    - bin/phpstan analyse src/ --level=max
+    - bin/phpcs
+    - bin/phpspec run -fpretty --no-interaction -v
+    - bin/phpunit

@@ -1,0 +1,74 @@
+{% macro strength(title, description, icon_class) %}
+    <div class="col-lg-4">
+        <div class="features mx-auto mb-4">
+            <div class="big-icon mb-3 d-flex">
+                <i class="m-auto {{ icon_class }} text-pink"></i>
+            </div>
+            <h3>{{ title }}</h3>
+            <p style="color: #DDD; font-size: 1.1rem" class="lead mb-0">{{ description|raw }}</p>
+        </div>
+    </div>
+{% endmacro %}
+
+<section class="page-section background-dark-blue text-light mb-0 shadow" id="my-strengths">
+    <div class="container">
+        <h2 class="page-section-heading text-center text-uppercase">I ship high quality projects</h2>
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            {{ _self.strength('Pragmatism', "Sometimes the solution to solve a problem is not state of the art programming, but a more straightforward solution.", 'fas fa-balance-scale') }}
+            {{ _self.strength('Quality Addict', "I focus on the entire quality spectrum to deliver bug free applications and I believe that there is always room for improvement!", 'fas fa-clipboard-check') }}
+            {{ _self.strength('Project Manager', "I know the tools and best practices of project management that makes both the clients and the team happy.", 'fas fa-tasks') }}
+        </div>
+        
+        <h2 class="page-section-heading text-center text-uppercase">I write tailored code</h2>
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            {{ _self.strength('Backend Dev.', "I have been coding with PHP frameworks from Symfony 1 to 4 for tailor-made business applications. I'm open to work with any other backend language.", 'fab fa-symfony') }}
+            {{ _self.strength('Data Lover', "I love working with huge datasets and Data Science is the area of expertise that I want to learn the most.", 'fas fa-server') }}
+            {{ _self.strength('Optimizer', "Optimizing a web page that loads in 30 seconds and makes 2'567 SQL queries to running in 2 seconds is very gratifying.", 'fas fa-tachometer-alt') }}
+        </div>
+
+        <h2 class="page-section-heading text-center text-uppercase">I help the team</h2>
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            {{ _self.strength('Pedagogy', "Teaching to students and junior developers made me learn about patience, empathy and how to explain complex notions simply.", 'fas fa-chalkboard-teacher') }}
+            {{ _self.strength('Kindness', "Kind words means a lot and I try to always bring the best side of things. I also know when it's better to listen than to talk.", 'fas fa-heart') }}
+
+            {% set regex_description %}
+                Everybody needs someone that speaks fluent RegEx in their team, as they say :
+                <span class="text-pink">/^bb|[^b]{2}$/</span>, that is the question.
+            {% endset %}
+            {{ _self.strength('I speak RegEx', regex_description, 'fas fa-robot') }}
+        </div>
+
+        <div class="text-center mt-4">
+            <a class="btn btn-xl btn-outline-light shadow-sm" href="https://tentacode.github.io/curriculum/">
+                <i class="fas fa-graduation-cap mr-2"></i>
+                See my resume! (in French)
+            </a>
+        </div>
+    </div>
+</section>

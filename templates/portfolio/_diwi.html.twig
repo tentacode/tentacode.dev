@@ -1,0 +1,65 @@
+{% embed 'portfolio/portfolio_item.html.twig' with {
+    'modal_id': 'diwi',
+    'title': 'Diwi',
+    'icon_class': 'fas fa-heart-broken',
+    'image_path': 'diwi.jpg'
+} %}
+    {% block modal_content %}
+        <div class="col-lg-6">
+            <h2 id="portfolioModal_{{ modal_id }}_Label" class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ title }}</h2>
+
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="{{ icon_class }}"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <p>
+                <strong>Diwi</strong> was a dating application and was my first project when I joined <a href="https://netcats.com/" target="_blank">Netcats</a>. Due to the very competitve market on dating apps the project has been dropped three years later.
+            </p>
+            <p class="mb-5">
+                I was in charge of the project management, backend development (REST API, moderation backend) and I also helped making the Android application in react-native.
+            </p>
+
+            <table class="table table-responsive mb-4">
+                <tbody>
+                    <tr>
+                        <th scope="row">During</th>
+                        <td>2016 / 2017</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Role</th>
+                        <td>Backend Developer, Project Manager</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Language</th>
+                        <td>PHP7, SQL, JavaScript</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Frameworks</th>
+                        <td>Symfony 3, react-native</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Third Parties</th>
+                        <td>web sockets, Behat, phpspec, redis, MySQL, Sentry, Mailjet, Codeship</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <img alt="Diwi mobile application" class="img-fluid rounded mb-5" src="img/portfolio/diwi_mobile.jpg">
+
+            <div class="embed-responsive embed-responsive-16by9 mb-4">
+                <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/A8CNtK5E3Zk?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+                </iframe>
+            </div>
+
+            <button class="btn btn-primary" data-dismiss="modal">
+                <i class="fas fa-times fa-fw"></i>
+                Close
+            </button>
+        </div>
+    {% endblock %}
+{% endembed %}

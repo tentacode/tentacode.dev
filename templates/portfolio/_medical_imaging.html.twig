@@ -1,0 +1,60 @@
+{% embed 'portfolio/portfolio_item.html.twig' with {
+    'modal_id': 'medical_imaging',
+    'title': 'Medical Imaging search engine',
+    'icon_class': 'fas fa-notes-medical',
+    'image_path': 'medical_imaging.jpg'
+} %}
+    {% block modal_content %}
+        <div class="col-lg-6">
+            <h2 id="portfolioModal_{{ modal_id }}_Label" class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ title }}</h2>
+
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="{{ icon_class }}"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <p>
+                This challenging project was for a confidential healthcare company, the goal of the application is to provide a search engine for Medical Imaging (for example MRI) in order to classify and find the best images.
+            </p>
+            <p class="mb-5">
+                The complexity of this projects lies in the segmentation of the information that can be split on several distant servers and must be retrieved and computed locally. I have worked with the <a target="_blank" href="https://www.dicomstandard.org/">DICOM specification</a> and the open source server <a target="_blank" href="https://www.orthanc-server.com/">Orthanc</a>. I had the chance to start the project from scratch and preconize the architecture of the project, using the Symfony framework and the Worklow and Messenger components.
+            </p>
+
+            <table class="table table-responsive mb-4">
+                <tbody>
+                    <tr>
+                        <th scope="row">During</th>
+                        <td>2018, five months contract</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Role</th>
+                        <td>Backend Developer, Architect</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Language</th>
+                        <td>PHP7, SQL</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Frameworks</th>
+                        <td>Symfony 4</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Third Parties</th>
+                        <td>Behat, phpspec, Elasticsearch, Orthanc, Vagrant, ansible</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <img alt="Diagram of a DICOM network" class="img-fluid rounded mb-5" src="img/portfolio/orthanc_network.png">
+            <img alt="Screenshot of Orthanc frontend" class="img-fluid rounded mb-4" src="img/portfolio/orthanc.jpg">
+
+            <button class="btn btn-primary" data-dismiss="modal">
+                <i class="fas fa-times fa-fw"></i>
+                Close
+            </button>
+        </div>
+    {% endblock %}
+{% endembed %}

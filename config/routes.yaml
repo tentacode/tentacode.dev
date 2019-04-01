@@ -1,0 +1,11 @@
+landing:
+   path: /
+   controller: App\Controller\LandingController
+
+blog_list:
+   path: /blog
+   controller: App\Controller\BlogListController
+
+blog_detail:
+   path: /{slug}
+   controller: App\Controller\BlogDetailController

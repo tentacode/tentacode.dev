@@ -1,0 +1,38 @@
+{% embed 'portfolio/portfolio_item.html.twig' with {
+    'modal_id': 'pdd',
+    'title': 'Pragmatism Driven Dev.',
+    'icon_class': 'far fa-check-circle',
+    'image_path': 'pdd_title.jpg'
+} %}
+    {% block modal_content %}
+        <div class="col-lg-6">
+            <h2 id="portfolioModal_{{ modal_id }}_Label" class="portfolio-modal-title text-secondary text-uppercase mb-0">Pragmatism Driven Development</h2>
+
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="{{ icon_class }}"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+
+            <p>
+                <strong>P.D.D. Pragmatism Driven Development</strong> is the first real conference I gave. It was in 2014 for the <a target="_blank" href="https://event.afup.org/phptourlyon2014__programme/">PHPTour Lyon</a>.
+            </p>
+            <p class="mb-5">
+                The talk is a feedback about my experience with quality at large, from the code quality to the quality of the people and the processes, what are the mistake I see regularly and what steps can be done to improve the quality of a software.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <div class="embed-responsive embed-responsive-16by9 mb-4">
+                <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/7Dshrnre8d0?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <button class="btn btn-primary" data-dismiss="modal">
+                <i class="fas fa-times fa-fw"></i>
+                Close
+            </button>
+        </div>
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,30 @@
+{% embed 'portfolio/portfolio_item.html.twig' with {
+    'modal_id': 'ynov',
+    'modal_class': 'modal-lg',
+    'title': 'Teacher at YNOV',
+    'icon_class': 'fas fa-chalkboard-teacher',
+    'image_path': 'ynov.jpg'
+} %}
+    {% block modal_content %}
+        <div class="col-lg-12">
+            <h2 id="portfolioModal_{{ modal_id }}_Label" class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ title }}</h2>
+
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="{{ icon_class }}"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <p class="mb-5">
+                I have been teaching code at <a href="https://www.ynov.com/formation/ynov-informatique/" target="_blank">YNOV Lyon</a> for two years. I had the pleasure of teaching PHP, Symfony, bash shell scripts and PostgreSQL to three different classes. It was a really heartwarming experience and I learned a lot about patience, pedagogy and what the new generation of coders will be made of.
+            </p>
+
+            <button class="btn btn-primary" data-dismiss="modal">
+                <i class="fas fa-times fa-fw"></i>
+                Close
+            </button>
+        </div>
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,64 @@
+{% extends 'blog/base_blog.html.twig' %}
+
+
+{% block title %}tentacode.dev — {{ post.content.title }}{% endblock %}
+{% block og_title %}{{ post.content.title }}{% endblock %}
+{% block og_description %}{{ post.content.excerpt(300) }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_image %}{% endblock %}
+{% block twitter_card_type %}summary{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('dracula-prism/css/dracula-prism.css') }}">
+{% endblock %}
+
+{% block body %}
+<section class="page-section blog-detail text-dark background-light mt-2 mb-0  pb-5" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto mb-4">
+                <h1 class="text-center text-uppercase mt-5 mb-0">
+                    {{ post.content.title }}
+                </h1>
+            </div>
+        </div>
+
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="fas fa-feather-alt"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-lg-8 mx-auto mb-4">
+                <h4>
+                    <a href="{{ path('blog_detail', {
+                        'slug': post.slug
+                    }) }}"></a>
+                </h4>
+
+                {{ post.content.body|raw }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script src="{{ asset('dracula-prism/js/prism.js') }}"></script>
+<script type="text/javascript">
+  Prism.plugins.NormalizeWhitespace.setDefaults(
+    {
+      'remove-trailing': true,
+      'remove-indent': true,
+      'left-trim': true,
+      'right-trim': true
+    });
+</script>
+{% endblock %}

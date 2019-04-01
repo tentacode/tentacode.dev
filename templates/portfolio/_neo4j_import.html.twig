@@ -1,0 +1,37 @@
+{% embed 'portfolio/portfolio_item.html.twig' with {
+    'modal_id': 'neo4j_import',
+    'title': 'MySQL to Neo4j Import',
+    'icon_class': 'fas fa-cogs',
+    'image_path': 'neo4j_import_title.jpg'
+} %}
+    {% block modal_content %}
+        <div class="col-lg-6">
+            <h2 id="portfolioModal_{{ modal_id }}_Label" class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ title }}</h2>
+
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="{{ icon_class }}"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <p>
+                <a href="https://neo4j.com/" target="_blank">Neo4j</a> is a graph database we used for <a href="https://insights.betaseries.com/" target="_blank">BetaSeries Insights</a>, I've made a talk about it in april 2018 for a <a href="https://www.meetup.com/fr-FR/graphdb-Lyon/events/249115536/">Graph Database Lyon</a> meetup. The emphasis of the talk is put on the difficulty and the different methods available to load a lot of data from MySQL to Neo4j.
+            </p>
+            <p class="mb-5">
+                <a href="https://fr.slideshare.net/GabrielPillet/importer-500-millions-de-donnes-de-mysql-vers-neo4j" target="_blank">You can view the slides (in French)
+                on SlideShare!</a>
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <img alt="Neo4j nodes and relations" class="img-fluid rounded mb-4" src="img/portfolio/insights_nodes.jpg">
+            <img alt="Output of the import in a terminal" class="img-fluid rounded mb-5" src="img/portfolio/neo4j_import_terminal.jpg">
+
+            <button class="btn btn-primary" data-dismiss="modal">
+                <i class="fas fa-times fa-fw"></i>
+                Close
+            </button>
+        </div>
+    {% endblock %}
+{% endembed %}

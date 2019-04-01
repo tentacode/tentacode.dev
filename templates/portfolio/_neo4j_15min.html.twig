@@ -1,0 +1,37 @@
+{% embed 'portfolio/portfolio_item.html.twig' with {
+    'modal_id': 'neo4j_15_minutes',
+    'title': 'Neo4j in 15 minutes',
+    'icon_class': 'fas fa-project-diagram',
+    'image_path': 'neo4j_15min_title.jpg'
+} %}
+    {% block modal_content %}
+        <div class="col-lg-6">
+            <h2 id="portfolioModal_{{ modal_id }}_Label" class="portfolio-modal-title text-secondary text-uppercase mb-0">{{ title }}</h2>
+
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="{{ icon_class }}"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <p>
+                <a href="https://neo4j.com/" target="_blank">Neo4j</a> is a graph database we used for <a href="https://insights.betaseries.com/" target="_blank">BetaSeries Insights</a>, I've made a very quick introduction talk about it for a PHP meetup in Lyon.
+            </p>
+            <p class="mb-5">
+                <a href="https://fr.slideshare.net/GabrielPillet/neo4j-en15-minutes" target="_blank">You can view the slides (in French)
+                on SlideShare!</a>
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <img alt="Neo4j nodes and relations" class="img-fluid rounded mb-5" src="img/portfolio/neo4j_15min_nodes.jpg">
+            <img alt="Cypher query" class="img-fluid rounded mb-4" src="img/portfolio/neo4j_15min_cypher.jpg">
+
+            <button class="btn btn-primary" data-dismiss="modal">
+                <i class="fas fa-times fa-fw"></i>
+                Close
+            </button>
+        </div>
+    {% endblock %}
+{% endembed %}
