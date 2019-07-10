@@ -2,6 +2,13 @@ landing:
    path: /
    controller: App\Controller\LandingController
 
+redirect_contact:
+    path: /contact-me
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /
+        permanent: true
+
 blog_list:
    path: /blog
    controller: App\Controller\BlogListController
