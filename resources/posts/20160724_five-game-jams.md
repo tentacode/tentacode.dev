@@ -1,10 +1,10 @@
 # Five Game Jams
 
-As you probably know, my job is to code for the web (mostly), but I have always dreamt to create games, and thought that this was too different or too hard for me to do properly, until I changed my mind very recently.
+My job is to code for the web (mostly), but I have always dreamt to create games, and thought that this was too different or too hard for me to do properly, until I changed my mind very recently.
 
 tl;dr: Go directly play [Phat Fishes](#phatfishesludumdare35april2016).
 
-I first learnt about Game Jams via a friend ([@speedyiop](https://twitter.com/speedyop)) that was in an association called [Game Dev Party](http://gamedevparty.fr) that still exists and hosts "themed" jams in Lyon twice a year. Rules vary but a Game Jam is generally about making a game in a very short time (48h), and is mostly about spending a good time with great peoples making cool stuff and not sleeping very much.
+I first learnt about Game Jams via a friend ([@speedyiop](https://twitter.com/speedyop)) that was in an association called [Game Dev Party](http://gamedevparty.fr) that hosts "themed" jams in Lyon twice a year. Rules vary but a Game Jam is generally about making a game in a very short time (48h), and is mostly about spending a good time with great peoples making cool stuff and not sleeping very much.
 
 ## P.R.Out (Game Dev Party #2, march 2012)
 

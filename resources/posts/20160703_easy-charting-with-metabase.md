@@ -1,8 +1,6 @@
 # Easy charting with Metabase
 
-Hello there! Yes, I know It's been ages since I wrote anything here. Who are you? The internet police? 😱 LEAVE ME ALONE.
-
-Anyway, we've been really busy with [Netcats](http://netcats.com/)! These past monthes we've made a brand new iPhone application for [Diwi](https://diwi.com) (dating app in French only, but do take a look!), and as we did a cool start with more than 2K active users in two weeks, we needed insights about who our users are and how they use the app: **basically we needed pie charts**.
+These past few monthes we've made a brand new iPhone application for [Diwi](https://diwi.com) (dating app in French only, but do take a look!), and as we did a cool start with more than 2K active users in two weeks, we needed insights about who our users are and how they use the app: **basically we needed pie charts**.
 
 ## The do it yourself option
 

@@ -1,6 +1,6 @@
 # 10 tips with Behat3 and Mink
 
-I've been in 💖 with Behat for four years now, and when [@matthieunapoli](https://twitter.com/matthieunapoli) asked me about how to setup Behat3 in one of his project I realized that I'm using some tricks in my scenarios, so I might as well share them… I hope you'll find one or two useful!
+I've been in 💖 with Behat for years now, and when [@matthieunapoli](https://twitter.com/matthieunapoli) asked me about how to setup Behat3 in one of his project I realized that I'm using some tricks in my scenarios, so I might as well share them… I hope you'll find one or two useful!
 
 * [0. No shame disclaimer](#0noshamedisclaimer)
 * [1. Create a BaseContext](#1createabasecontext)
