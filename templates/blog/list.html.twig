@@ -25,6 +25,7 @@
                         <a href="{{ path('blog_detail', {
                             'slug': post.slug
                         }) }}">{{ post.content.title }}</a>
+                        <small class="text-pink">— {{ post.date|date('d/m/Y') }}</small>
                     </h4>
                     <p class="lead">
                         {{ post.content.excerpt(200) }}

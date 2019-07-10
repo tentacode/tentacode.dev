@@ -19,10 +19,13 @@
 <section class="page-section blog-detail text-dark background-light mt-2 mb-0  pb-5" id="blog">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 mx-auto mb-4">
-                <h1 class="text-center text-uppercase mt-5 mb-0">
+            <div class="col-lg-8 mx-auto mb-0 text-center">
+                <h1 class="text-center text-uppercase mt-5 mb-3">
                     {{ post.content.title }}
                 </h1>
+                <time datetime="{{ post.date|date('Y-m-d') }}" class="blog-time text-center">
+                    {{ post.date|date('d/m/Y') }}
+                </time>
             </div>
         </div>
 
