@@ -27,6 +27,7 @@
         <meta content="Gabriel Pillet" name="author">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="{{ url('landing') }}" />
+        <link rel="alternate" type="application/rss+xml" title="RSS feed my blog" href="{{ url('blog_feed', {'_format': 'xml'}) }}" />
         <title>{% block title %}@tentacode - Gabriel Pillet, Lead Backend Developer for Hire{% endblock %}</title>
 
         {% block stylesheets %}

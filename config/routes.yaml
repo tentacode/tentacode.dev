@@ -5,6 +5,12 @@ landing:
 blog_list:
    path: /blog
    controller: App\Controller\BlogListController
+   format: html
+
+blog_feed:
+   path: /blog.{_format}
+   controller: App\Controller\BlogListController
+   format: xml|rss
 
 blog_detail:
    path: /{slug}
