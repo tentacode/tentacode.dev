@@ -19,6 +19,12 @@ blog_feed:
    controller: App\Controller\BlogListController
    format: xml|rss
 
+sitemap:
+   path: /sitemap.xml
+   controller: App\Controller\SitemapController
+   format: xml
+
 blog_detail:
    path: /{slug}
    controller: App\Controller\BlogDetailController
+

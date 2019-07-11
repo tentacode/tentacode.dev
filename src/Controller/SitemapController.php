@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Post\PostRepository;
 
-final class BlogListController extends AbstractController
+final class SitemapController extends AbstractController
 {
     private $postRepository;
 
@@ -15,18 +15,11 @@ final class BlogListController extends AbstractController
         $this->postRepository = $postRepository;
     }
 
-    public function __invoke(string $_format): Response
+    public function __invoke(): Response
     {
-        if ($_format === 'xml') {
-            $_format = 'rss';
-        }
-
         $posts = $this->postRepository->getPosts();
 
-        return $this->render(sprintf(
-            'blog/list.%s.twig',
-            $_format
-        ), [
+        return $this->render('sitemap/sitemap.xml.twig', [
             'posts' => $posts,
         ]);
     }
