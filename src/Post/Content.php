@@ -6,7 +6,8 @@ use ParsedownExtra;
 
 final class Content
 {
-    protected $markdown;
+    private $markdown;
+    private $metadatas = [];
 
     public function __construct(string $markdown)
     {
@@ -49,18 +50,67 @@ final class Content
         return $text;
     }
 
-    public function getBody()
+    public function getBody(): string
     {
         $markdown = $this->getMarkdownBody();
-        $parser = new ParsedownExtra();
         
+        $markdown = $this->stripMetadatas($markdown);
+
+        $parser = new ParsedownExtra();
+
         $html = $parser->text($markdown);
         $html = $this->autoAnchor($html);
 
         return $html;
     }
 
-    protected function autoAnchor($html)
+    private function stripMetadatas(string $markdown): string
+    {
+        if (!preg_match("/^-{3}\n(.*)\n-{3}\n(.*)$/s", $markdown, $matches)) {
+            return $markdown;
+        }
+
+        list($all, $metadatas, $body) = $matches;
+        $metadatas = explode("\n", $metadatas);
+        foreach ($metadatas as $metadata) {
+            $this->addMetadata($metadata);
+        }
+
+        return $body;
+    }
+
+    private function addMetadata(string $metadata): void
+    {
+        if (!preg_match('/^([^:]+):(.+)$/', $metadata, $matches)) {
+            throw new \InvalidArgumentException(sprintf(
+                'Metadata "%s" is invalid. Should be "key: value".',
+                $metadata
+            ));
+        }
+
+        list($all, $key, $value) = $matches;
+
+        $this->metadatas[$key] = trim($value);
+    }
+
+    public function getMetadata(string $key): string
+    {
+        if (!$this->hasMetadata($key)) {
+            throw new \RuntimeException(sprintf(
+                'Metadata "%s" does no exist.',
+                $key
+            ));
+        }
+
+        return $this->metadatas[$key];
+    }
+
+    public function hasMetadata(string $key): bool
+    {
+        return isset($this->metadatas[$key]);
+    }
+
+    private function autoAnchor(string $html): string
     {
         // on each title, auto set anchor
         $html = preg_replace_callback('/<h([1-6])>(.*)<\/h([1-6])>/u', function ($matches) {
@@ -74,10 +124,17 @@ final class Content
             return sprintf('<h%s id="%s">%s</h%s>', $matches[1], $id, $matches[2], $matches[3]);
         }, $html);
 
+        if ($html === null) {
+            throw new \RuntimeException(sprintf(
+                'Could not replace titles. Preg last error : %s.',
+                preg_last_error()
+            ));
+        }
+
         return $html;
     }
 
-    protected function getMarkdownBody()
+    private function getMarkdownBody(): string
     {
         $markdown = str_replace(
             sprintf('# %s', $this->getTitle()),
