@@ -11,7 +11,7 @@ final class Content
 
     public function __construct(string $markdown)
     {
-        $this->markdown = $markdown;
+        $this->markdown = $this->stripMetadatas($markdown);
     }
 
     public function getTitle(): string
@@ -52,13 +52,11 @@ final class Content
 
     public function getBody(): string
     {
-        $markdown = $this->getMarkdownBody();
-        
-        $markdown = $this->stripMetadatas($markdown);
-
         $parser = new ParsedownExtra();
 
-        $html = $parser->text($markdown);
+        $markdownBody = $this->getMarkdownBody();
+
+        $html = $parser->text($markdownBody);
         $html = $this->autoAnchor($html);
 
         return $html;

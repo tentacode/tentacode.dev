@@ -2,36 +2,40 @@
 
 namespace App\Post;
 
-use DateTime;
-
 final class Post
 {
     protected $content;
     protected $slug;
     protected $date;
 
-    /**
-     * @param string $slug
-     */
-    public function __construct(Content $content, $slug, DateTime $date)
+    public function __construct(Content $content, string $slug, \DateTime $date)
     {
         $this->content = $content;
         $this->slug = $slug;
         $this->date = $date;
     }
 
-    public function getContent()
+    public function getContent(): Content
     {
         return $this->content;
     }
 
-    public function getDate()
+    public function getDate(): \DateTime
     {
         return $this->date;
     }
 
-    public function getSlug()
+    public function getSlug(): string
     {
         return $this->slug;
+    }
+
+    public function getDescription(): string
+    {
+        if ($this->content->hasMetadata('post_description')) {
+            return $this->content->getMetadata('post_description');
+        }
+
+        return $this->content->getExcerpt(300);
     }
 }

@@ -237,8 +237,8 @@ pre::-webkit-scrollbar-thumb {
     border-radius: 3px;
     background: #ffe5ee;
     color: var(--color-dark);
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .blog-time {

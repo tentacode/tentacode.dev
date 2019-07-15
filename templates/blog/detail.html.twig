@@ -1,14 +1,16 @@
 {% extends 'blog/base_blog.html.twig' %}
 
 {% block title %}tentacode.dev — {{ post.content.title }}{% endblock %}
+
 {% block og_title %}{{ post.content.title }}{% endblock %}
-{% block og_description %}{{ post.content.excerpt(300) }}{% endblock %}
+{% block og_description %}{{ post.description }}{% endblock %}
 {% block og_type %}article{% endblock %}
 {% block og_image %}{% spaceless %}
     {% if post.content.hasMetadata('post_image') %}
         {{ absolute_url(asset(post.content.getMetadata('post_image'))) }}
     {% endif %}
 {% endspaceless %}{% endblock %}
+
 {% block twitter_card_type %}{{ post.content.hasMetadata('post_image') ? 'summary_large_image' : 'summary' }}{% endblock %}
 
 {% block stylesheets %}
