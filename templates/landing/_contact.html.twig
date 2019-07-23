@@ -35,6 +35,13 @@
                         </div>
                         {{ form_errors(contact_form.message) }}
                     </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            {{ form_label(contact_form.areYouABot) }}
+                            {{ form_widget(contact_form.areYouABot) }}
+                        </div>
+                        {{ form_errors(contact_form.areYouABot) }}
+                    </div>
                     <br>
                     <div class="form-group">
                         <button class="btn btn-primary btn-xl shadow-sm" id="sendMessageButton" type="submit">Send</button>

@@ -22,6 +22,12 @@ class ContactMessage
      */
     private $message;
 
+    /**
+     * @Assert\NotBlank
+     * @Assert\EqualTo("tentacode")
+     */
+    public $areYouABot;
+
     public function setSenderEmail(string $senderEmail): void
     {
         $this->senderEmail = $senderEmail;
