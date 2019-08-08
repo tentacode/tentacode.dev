@@ -12,17 +12,17 @@
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ path('landing') }}#my-strengths">My strengths</a>
                 </li>
-                <li class="nav-item mx-0 mx-lg-1">
+                {# <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ path('landing') }}#the-dream-job">The dream job</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ path('landing') }}#portfolio">Portfolio</a>
-                </li>
+                </li> #}
                 <li class="nav-item mx-0 mx-lg-1">
                     <a 
                         class="{% if blog_active|default(false) %}text-pink {% endif %}nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
                         href="{{ blog_url|default('#blog') }}
                     ">Blog</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ path('landing') }}#portfolio">Portfolio</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{{ path('landing') }}#contact">Get in touch</a>

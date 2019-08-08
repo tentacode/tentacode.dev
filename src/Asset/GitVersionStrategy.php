@@ -18,7 +18,7 @@ final class GitVersionStrategy implements VersionStrategyInterface
         $process = Process::fromShellCommandline('git rev-parse --short HEAD');
         $process->mustRun();
 
-        self::$hash = $process->getOutput();
+        self::$hash = trim($process->getOutput());
 
         return self::$hash;
     }
