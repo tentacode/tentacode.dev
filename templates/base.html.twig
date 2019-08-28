@@ -23,12 +23,12 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-        <meta content="{% block description %}Hello! My name is Gabriel Pillet and I work for Yousign as their Lead QA.{% endblock %}" name="description">
+        <meta content="{% block description %}Hello! My name is Gabriel Pillet and I work for Yousign as their QA Lead.{% endblock %}" name="description">
         <meta content="Gabriel Pillet" name="author">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="{{ url('landing') }}" />
         <link rel="alternate" type="application/rss+xml" title="RSS feed my blog" href="{{ url('blog_feed', {'_format': 'xml'}) }}" />
-        <title>{% block title %}@tentacode - Gabriel Pillet, Lead QA for Yousign{% endblock %}</title>
+        <title>{% block title %}@tentacode - Gabriel Pillet, QA Lead for Yousign{% endblock %}</title>
 
         {% block stylesheets %}
             <link href="{{ asset('startbootstrap-freelancer/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
@@ -43,7 +43,7 @@
             <meta property="og:url" content="{{ app.request.uri }}" />
             <meta property="og:type" content="{% block og_type 'website' %}" />
             <meta property="og:title" content="{% block og_title %}Hello there!{% endblock %}" />
-            <meta property="og:description" content="{% block og_description %}My name is Gabriel Pillet and I work for Yousign as their Lead QA.{% endblock %}" />
+            <meta property="og:description" content="{% block og_description %}My name is Gabriel Pillet and I work for Yousign as their QA Lead.{% endblock %}" />
             <meta property="og:image" content="{% block og_image %}{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('img/twitter_card.png') }}{% endblock %}" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="628" />
