@@ -1,8 +1,0 @@
-.htaccess
-index.html
-images
-fonts
-css/*
-!css/dracula-prism.css
-js/*
-!js/prism.js
